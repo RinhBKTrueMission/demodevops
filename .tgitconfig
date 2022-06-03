@@ -1,0 +1,7 @@
+[user]
+	name = cuongth
+	email = cuong.9312@gmail.com
+[core]
+	autocrlf = true
+[credential]
+	useHttpPath = true
