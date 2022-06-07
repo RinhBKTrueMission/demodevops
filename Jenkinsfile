@@ -4,11 +4,11 @@ pipeline {
     maven 'maven 3.8.5'
   }
     stages {
-//         stage('Clone') {
-//             steps {
-//                 sh 'git clone https://github.com/RinhBKTrueMission/demodevops.git'
-//             }
-//         }
+        stage('Clone') {
+            steps {
+                sh 'git clone https://github.com/RinhBKTrueMission/demodevops.git'
+            }
+        }
         // stage('Test'){
         //     steps{
 
