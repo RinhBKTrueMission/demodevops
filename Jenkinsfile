@@ -23,10 +23,10 @@ pipeline {
             }
         }
         }
-        // stage('Deploy'){
-        //     steps{
-
-        //     }
-        // }
+        stage('Deploy'){
+            steps{
+                sh 'cp /var/lib/jenkins/jobs/spring-boot-hello/workspace/target/spring-boot-hello-0.0.1-SNAPSHOT.jar D:/FPGA/spring-boot-hello.jar'
+            }
+        }
     }
 }
