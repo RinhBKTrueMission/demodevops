@@ -12,6 +12,10 @@ public class HomeController {
     }
     @GetMapping("/login")
     public String login() {
-        return "index";
+        return "login";
+    }
+    @GetMapping("/logout")
+    public String logout() {
+        return "logout";
     }
 }
