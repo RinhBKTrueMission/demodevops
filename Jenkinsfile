@@ -12,6 +12,10 @@ pipeline {
                }
             }
         }
+        stage('Initialize'){
+                def dockerHome = tool 'RinhTran'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
+            }
         stage('Docker Build and Tag') {
                    steps {
 
