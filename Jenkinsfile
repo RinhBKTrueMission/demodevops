@@ -25,7 +25,7 @@ pipeline {
                    steps {
 
                         sh 'docker build -t testOps:latest .'
-                        sh 'docker tag testOps rinhtt/testOps:latest'
+                        sh 'docker tag testops rinhtt/testops:latest'
 
 
                   }
@@ -34,7 +34,7 @@ pipeline {
           stage('Publish image to Docker Hub') {
                     steps {
                 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-                  sh  'docker push rinhtt/testOps:latest'
+                  sh  'docker push rinhtt/testops:latest'
 
                 }
 
@@ -44,12 +44,12 @@ pipeline {
               stage('Run Docker container on Jenkins Agent') {
 
                     steps {
-                        sh "docker run -d -p 8003:8080 rinhtt/testOps"
+                        sh "docker run -d -p 8003:8080 rinhtt/testops"
                     }
                 }
               stage('Run Docker container on remote hosts') {
                     steps {
-                        sh "docker -H ssh://jenkins@172.31.28.25 run -d -p 8003:8080 rinhtt/testOps"
+                        sh "docker -H ssh://jenkins@172.31.28.25 run -d -p 8003:8080 rinhtt/testops"
 
                     }
                 }
