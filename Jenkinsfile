@@ -8,7 +8,6 @@ pipeline {
             steps{
             withMaven{
                 sh 'mvn clean install -f demodevops/pom.xml'
-
                }
             }
         }
