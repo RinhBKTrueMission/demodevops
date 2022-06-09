@@ -24,7 +24,7 @@ pipeline {
         stage('Docker Build and Tag') {
                    steps {
 
-                        sh 'docker build -t testOps:latest .'
+                        sh 'docker build -t testops:latest .'
                         sh 'docker tag testops rinhtt/testops:latest'
 
 
