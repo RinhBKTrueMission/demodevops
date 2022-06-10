@@ -23,8 +23,7 @@ pipeline {
             }
         stage('Docker Build and Tag') {
                    steps {
-                         sh 'systemctl daemon-reload'
-                         sh   'systemctl restart docker'
+
                         sh 'docker build -t testops:latest .'
                         sh 'docker tag testops rinhtt/testops:latest'
 
