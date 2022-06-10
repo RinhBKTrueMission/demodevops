@@ -22,18 +22,17 @@ pipeline {
             }
         stage('Docker Build and Tag') {
                    steps {
-                   withDockerRegistry(credentialsId: "docker_id", url: "https://index.docker.io/v1/") {
-                        sh 'docker --version'
-                        sh 'docker build -t testops:latest .'
-                        sh 'docker tag testops rinhtt/testops:latest'
-                   }
-
+                           withDockerRegistry(credentialsId: '8f5c07db-8209-4fe8-bafc-5058fdb63bcb', url: 'https://index.docker.io/v1/') {
+                                     sh 'docker --version'
+                                     sh 'docker build -t testops:latest .'
+                                     sh 'docker tag testops rinhtt/testops:latest'
+                           }
                   }
                 }
 
           stage('Publish image to Docker Hub') {
                     steps {
-                withDockerRegistry([ credentialsId: "docker_id", url: "https://index.docker.io/v1/" ]) {
+                withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
                   sh  'docker push rinhtt/testops:latest'
 
                 }
