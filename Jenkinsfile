@@ -24,7 +24,6 @@ pipeline {
                    steps {
 //                          sh 'systemctl daemon-reload'
 //                          sh   'systemctl restart docker'
-                        sh 'docker --version'
                         sh 'docker build -t testops:latest .'
                         sh 'docker tag testops rinhtt/testops:latest'
 
