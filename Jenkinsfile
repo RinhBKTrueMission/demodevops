@@ -24,7 +24,7 @@ pipeline {
                    steps {
                    withDockerRegistry(credentialsId: "docker_id", url: "https://index.docker.io/v1/") {
 
-                        sh 'docker build -t testops:latest .'
+                        sh label:'',script: 'docker build -t testops:latest .'
                         //sh 'docker tag testops rinhtt/testops:latest'
                    }
 
