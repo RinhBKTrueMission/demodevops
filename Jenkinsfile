@@ -1,9 +1,14 @@
 pipeline {
     agent any
     tools {
-    maven 'maven 3.8.5'
+    maven 'maven 3.8.6'
   }
     stages {
+     stage('Clone') {
+                    steps {
+                           sh 'git clone https://github.com/RinhBKTrueMission/demodevops.git'
+                       }
+                }
         stage('Build') {
             steps{
             withMaven{
